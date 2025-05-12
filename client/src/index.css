@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+.btn {
+  @apply border border-gray-200 shadow-sm px-3 py-1 rounded-md hover:bg-gray-200 transition-all text-sm font-medium;
+}
+@plugin "@tailwindcss/typography";
