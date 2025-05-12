@@ -18,7 +18,7 @@ function App() {
   const [socketReady, setsocketReady] = useState(false);         // state to manage the socket connection
 
   useEffect(() => {
-    socket_ref.current = io("http://localhost:3000");          // connecting to the socket server
+    socket_ref.current = io("https://backend-real-time-collaborator.onrender.com");          // connecting to the socket server
     //listen for all active users
     socket_ref.current.on("active-users", (list) => setUsers(list));
 
@@ -49,7 +49,7 @@ function App() {
                 <ActiveUsers users={users}/>
               </div>
               <div className="w-full lg:w-2/4 bg-white p-6 rounded shadow-md">
-                <h2 className="text-lg font-semibold mb-4">Welcome, {username}!</h2>
+                <h2 className="text-lg font-semibold mb-4" style={{color}}>Welcome, {username}!</h2>
                 <Editor socket={socket_ref.current} username={username} />
               </div>
 
