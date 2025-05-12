@@ -10,7 +10,7 @@ app.use(cors());        // Using CORS middleware to allow cross-origin requests(
 const server = http.createServer(app);   // Create an HTTP server
 const io = new Server(server, {       // creating a socket.io server over the http server
   cors: {
-    origin: "http://localhost:5173", // Frontend URL as origin
+    origin: "https://text-editor-k4s4.onrender.com", // Frontend URL as origin
     methods: ["GET", "POST"],
   },
 });
