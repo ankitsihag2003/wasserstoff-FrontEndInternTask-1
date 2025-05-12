@@ -24,7 +24,6 @@ const broadcastUsers = ()=>{
 
 // Socket.io connection event
 io.on("connection", (socket) => {
-    console.log("A user connected",socket.id); // Log when a user connects
     // Send the current content to the newly connected user
     socket.emit("load-content", content);
 
@@ -54,7 +53,6 @@ io.on("connection", (socket) => {
 
     // Disconnection event
     socket.on("disconnect", () => {
-        console.log("A user disconnected",socket.id); // Log when a user disconnects
         users.delete(socket.id); // Remove the user from the users map
         broadcastUsers(); // Broadcast the updated list of active users
     });
